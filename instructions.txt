@@ -1,0 +1,110 @@
+//1a. In terminal, initialize npm and install dependencies
+// (express, dotenv, cors, mongodb, ejs, nodemon):
+
+// npm init
+// npm install express
+// npm install dotenv
+// npm install cors
+// npm install mongodb
+// npm install ejs
+// npm install nodemon --save-dev
+
+//1b. In package.json file(under scripts), add:
+
+// "dev": "nodemon server.js" (don't forget preceeding comma)
+
+
+//2. In server.js file, require dependencies:
+
+// const express = require('express')
+// const app = express()
+// const cors = require('cors')
+// const MongoClient = require ('mongodb').MongoClient
+// require('dotenv').config()
+
+
+//3. In server.js file, declare variables:
+
+// let db,
+//   dbConnectionString = process.env.DB_STRING,
+//   dbName = 'hundred-hours-api',
+//   collection
+
+
+//4. Create .gitignore file and .env file and add connection string to 
+// .env file:
+
+// add DB_STRING info from mongodb connect area to .env file
+// add node_modules and .env to .gitignore file
+
+
+//5. In server.js file, connect to MongoDB:
+
+// MongoClient.connect(dbConnectionString)
+//  .then(client => {
+//      console.log("Connected to Database")
+//      db = client.db(dbName)
+//      collection = db.collection('hundred-hours-info')
+//  })
+
+
+//6. Create Port:
+
+// In .env file:
+// PORT = 8000 (whatever number you choose)
+
+// In server.js:
+// app.listen(process.env.PORT || PORT, () => {
+//     console.log("Server is running")
+// })
+
+
+//7. TEST TEST TEST Mongo and Port Connection:
+
+// In terminal:
+// npm run dev 
+// OR (if nodemon not set up):
+// node server.js
+
+
+//8. In server.js file, set middleware:
+
+// app.set('view engine', 'ejs')
+// app.use(express.static('public'))
+// app.use(express.urlencoded({extended: true}))
+// app.use(express.json())
+// app.use(cors())
+
+
+//9. Create Public and Views folders - add main.js and style.css to 
+// Public and index.ejs to Views:
+
+// create public folder-add main.js and style.css files
+// create views folder-add index.ejs file
+
+
+//10. Add content to main.js, style.css, index.ejs:
+
+// don't forget to <link> style and <script> main files
+
+
+//11. Remove .env file from .gitignore temporarily 
+
+
+//12. Make sure heroku CLI is installed
+
+
+//13. In terminal, create heroku repo:
+
+// heroku login
+// heroku create my-hundred-hours-api
+// echo "web: node server.js" > Procfile
+// git add . 
+// git commit -m "changes"
+// git push heroku main
+
+
+//14. Put .env file back into gitignore
+
+
+//15. TEST TEST TEST Heroku Link

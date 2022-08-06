@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<section class="row">
+    <section class="column">
+        <h2>Input API Data Here</h2>
+        <form action="/api" method="POST">
+            <input type="text" placeholder="name" name="name">
+            <input type="text" placeholder="badge" name="badge">
+            <input type="date" placeholder="birthdate" name="birthdate">
+            <input type="text" placeholder="status" name="status">
+            <input type="text" placeholder="dept" name="dept">
+            <input type="text" placeholder="des" name="des">
+            <input type="date" placeholder="join" name="join">
+            <input type="text" placeholder="lvl" name="lvl">
+            <button type="submit">ADD NEW</button>
+            <button type="button" id="updateButton">UPDATE INFO</button>
+        </form>
+    </section>
+    <section class="column">
+        <h2>Delete API Data HERE</h2>
+        <input type="text" placeholder="name to delete" name="deleteInput" id="deleteInput">
+        <button id="deleteButton">DELETE</button>
+
+        <h2>Current Employees</h2>
+        <ul class="employees">
+            <% for(let i=0; i< info.length; i++) {%>
+                <li class="employees">
+                    <span><%= info[i] %></span>
+                </li>
+            <% } %>
+        </ul>
+    </section>
+</section>
+<script type="text/javascript" src="main.js"></script>    
+</body>
+</html>
